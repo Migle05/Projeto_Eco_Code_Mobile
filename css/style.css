@@ -61,3 +61,24 @@
         text-align: center;
         padding: 20px;
       }
+          .cookie-banner {
+     position: fixed;
+     bottom: 20px;
+     left: 50%;
+     transform: translateX(-50%);
+     background: white;
+     color: black;
+     padding: 20px;
+     border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+     z-index: 9999;
+        text-align: center;
+    }
+
+    .cookie-banner button {
+        padding: 10px 20px;
+        margin: 5px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        }
