@@ -167,11 +167,17 @@ footer a {
 
 section {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
   padding: 20px;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 60vh;
+}
+
+section h1{
+  width: 100%;
+  text-align: center;
 }
 
 section div {
