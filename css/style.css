@@ -7,7 +7,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #d6e69e, #fff);
+  background: linear-gradient(135deg,#d6e69e,#fff);
   color: #222;
 }
 
@@ -57,9 +57,15 @@ header {
 
 footer {
   background: #0e160a;
-  color: white;
-  text-align: center;
+  color: #c8e477;
+  text-align: center, left;
+  gap: 20px;
   padding: 20px;
+  display: grid;
+}
+
+footer a {
+  color: #c8e477;
 }
 
 .cookie-banner {
@@ -89,8 +95,6 @@ footer {
 }
 
 .hero {
-  height: 100vh;
-  background: linear-gradient(135deg,#d6e69e,#fff);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,4 +124,18 @@ footer {
   width: 35px;
   height: 35px;
   object-fit: contain;
+}
+
+section {
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+section div {
+  background: #fff;
+  border: 1px solid black;
 }
