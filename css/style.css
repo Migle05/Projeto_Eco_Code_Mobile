@@ -1,115 +1,123 @@
- * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
- 
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: linear-gradient(135deg, #d6e69e, #fff);
-        color: #222;
-      }
-
-      nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 90px;
-        background: #0e160a;
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 8px;
-        transition: height 0.4s;
-        z-index: 1000;
-     }
-
-      nav.scrolled {
-        height: 65px;
-        background: #1b2413;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      nav a {
-        color: #c8e477;
-        margin-left: 20px;
-        text-decoration: none;
-      }
-
-      nav a:hover {
-        background-color: #c8e477;
-        border-radius: 20px;
-        padding: 10px;
-        color: #0e160a;
-      }
-
-      nav .logo {
-        font-weight: bold;
-        color: #c8e477;
-      }
-
-      header {
-        margin-top: 90px;
-        flex: 1;
-      }
-
-      footer {
-        background: #0e160a;
-        color: white;
-        text-align: center;
-        padding: 20px;
-      }
-          .cookie-banner {
-     position: fixed;
-     bottom: 20px;
-     left: 50%;
-     transform: translateX(-50%);
-     background: white;
-     color: black;
-     padding: 20px;
-     border-radius: 12px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-     z-index: 9999;
-        text-align: center;
-    }
-
-    .cookie-banner button {
-        padding: 10px 20px;
-        margin: 5px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        }
-        .hero {
-    height: 100vh;
-    background: linear-gradient(135deg,#d6e69e,#fff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 25px;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #d6e69e, #fff);
+  color: #222;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  background: #0e160a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  transition: height 0.4s;
+  z-index: 1000;
+}
+
+nav.scrolled {
+  height: 65px;
+  background: #0e160a;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  color: #c8e477;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: #c8e477;
+  border-radius: 20px;
+  padding: 10px;
+  color: #0e160a;
+}
+
+nav .logo {
+  font-weight: bold;
+  color: #c8e477;
+}
+
+header {
+  margin-top: 90px;
+  flex: 1;
+}
+
+footer {
+  background: #0e160a;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 9999;
+  text-align: center;
+}
+
+.cookie-banner button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cookie-banner button:hover {
+  background: #d6e69e;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg,#d6e69e,#fff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 25px;
+}
+
 .hero h1 {
-    font-size: clamp(36px,7vw,80px);
-    margin-bottom: 10px;
+  font-size: clamp(36px,7vw,80px);
+  margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 22px;
+  font-size: 22px;
 }
+
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    color: #c8e477;
-    font-size: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #c8e477;
+  font-size: 22px;
 }
 
 .logo img {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
 }

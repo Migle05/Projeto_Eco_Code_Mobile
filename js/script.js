@@ -1,8 +1,5 @@
-
-
 const cookieBanner = document.getElementById("cookie-banner");
 
-// Aceitar cookies
 function responderCookies() {
     cookieBanner.style.display = "none";
 }
