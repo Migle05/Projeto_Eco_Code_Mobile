@@ -33,21 +33,21 @@ nav.scrolled {
 }
 
 nav a {
-  color: #c8e477;
+  color: #315b35;
   margin-left: 20px;
   text-decoration: none;
 }
 
 nav a:hover {
-  background-color: #c8e477;
+  background-color: #527d45;
   border-radius: 20px;
   padding: 10px;
-  color: #0e160a;
+  color: #fff;
 }
 
 nav .logo {
   font-weight: bold;
-  color: #c8e477;
+  color: #315b35;
 }
 
 header {
@@ -57,7 +57,7 @@ header {
 
 footer {
   background: #0e160a;
-  color: #c8e477;
+  color: #315b35;
   text-align: center, left;
   gap: 20px;
   padding: 20px;
@@ -65,10 +65,10 @@ footer {
 }
 
 footer a {
-  color: #c8e477;
+  color: #315b35;
 }
 
-.cookie-banner {
+.cookie-content {
   position: fixed;
   bottom: 20px;
   left: 50%;
@@ -82,16 +82,52 @@ footer a {
   text-align: center;
 }
 
-.cookie-banner button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.cookie-content h3 {
+    color: #315b35;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
-.cookie-banner button:hover {
-  background: #d6e69e;
+.cookie-content p {
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.cookie-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cookie-buttons button {
+  padding: 11px 25px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btnAceitar {
+    background: #527d45;
+    color: white;
+    border: 2px solid #527d45;
+}
+
+.btn-accept:hover {
+    background: #3d6334;
+    border-color: #3d6334;
+}
+
+.btnRejeitar {
+    background: white;
+    color: #527d45;
+    border: 2px solid #527d45;
+}
+
+.btn-reject:hover {
+    background: #edf4e9;
 }
 
 .hero {
