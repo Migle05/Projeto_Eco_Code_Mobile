@@ -32,7 +32,6 @@ nav {
 nav.scrolled {
   height: 65px;
   background: #0e160a;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav a {
@@ -168,7 +167,7 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 20px;
+  padding: 200px;
   justify-content: center;
   align-items: center;
   min-height: 60vh;
@@ -235,7 +234,6 @@ section div {
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid #ddd;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: 0.3s;
 }
@@ -266,8 +264,10 @@ section div {
   display: flex;
   justify-content: center;
   gap: 15px;
-  width: 23%;
-  margin: 20px 0;
+  width: 100%;
+  margin: 10px 0 0;
+  background: transparent;
+  border: none;
 }
 
 .tabs button {
@@ -290,12 +290,12 @@ section div {
 .conteudo-objetivo {
   display: none;
   width: 100%;
+  margin: 0 auto;
   max-width: 600px;
   background: white;
   padding: 30px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .conteudo-data h2,

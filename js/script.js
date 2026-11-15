@@ -1,6 +1,5 @@
 const cookieBanner = document.getElementById("cookie-banner");
 
-// Verificar se os cookies já foram aceites
 if (localStorage.getItem("cookiesAccepted") === "true") {
     cookieBanner.style.display = "none";
 }
@@ -19,6 +18,7 @@ window.addEventListener("scroll", () => {
         navBar.classList.remove("scrolled");
     }
 });
+
 function mostrarData(id) {
     const conteudos = document.querySelectorAll(".conteudo-data");
 
