@@ -10,7 +10,7 @@ html {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#d6e69e,#fff);
+  background: linear-gradient(135deg,#315b35,#d6e69e);
   color: #222;
 }
 
@@ -80,7 +80,6 @@ footer a {
   color: black;
   padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   z-index: 9999;
   text-align: center;
 }
