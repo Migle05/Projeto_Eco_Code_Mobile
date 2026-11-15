@@ -19,3 +19,23 @@ window.addEventListener("scroll", () => {
         navBar.classList.remove("scrolled");
     }
 });
+function mostrarData(id) {
+    const conteudos = document.querySelectorAll(".conteudo-data");
+
+    conteudos.forEach(conteudo => {
+        conteudo.style.display = "none";
+    });
+
+    document.getElementById(id).style.display = "block";
+}
+
+
+function mostrarObjetivo(id) {
+    const conteudos = document.querySelectorAll(".conteudo-objetivo");
+
+    conteudos.forEach(conteudo => {
+        conteudo.style.display = "none";
+    });
+
+    document.getElementById(id).style.display = "block";
+}

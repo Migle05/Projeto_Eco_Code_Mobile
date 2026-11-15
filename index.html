@@ -63,15 +63,60 @@
       </div>
     </section>
 
-    <section id="datas">
-      <h1>Datas da Campanha</h1>
+<section id="datas">
+  <h1>Datas da Campanha</h1>
 
-    </section>
+  <div class="tabs">
+    <button onclick="mostrarData('calendario')">
+      Calendário
+    </button>
 
-    <section id="objetivos">
-      <h1>Objetivos da Campanha</h1>
+    <button onclick="mostrarData('local')">
+      Local de entrega
+    </button>
+  </div>
 
-    </section>
+  <div id="calendario" class="conteudo-data">
+    <h2>Calendário da Campanha</h2>
+    <p>Início: A confirmar</p>
+    <p>Fim: A confirmar</p>
+    <p>Horário: A confirmar</p>
+  </div>
+
+  <div id="local" class="conteudo-data">
+    <h2>Onde entregar?</h2>
+    <p>Coloca o teu telemóvel na caixa de recolha.</p>
+    <p>Local: PBX, junto à Secretaria.</p>
+  </div>
+</section>
+
+<section id="objetivos">
+  <h1>Objetivos da Campanha</h1>
+
+  <div class="tabs">
+    <button onclick="mostrarObjetivo('ambientais')">
+      Ambientais
+    </button>
+
+    <button onclick="mostrarObjetivo('educativos')">
+      Educativos
+    </button>
+  </div>
+
+  <div id="ambientais" class="conteudo-objetivo">
+    <h2>Objetivos Ambientais</h2>
+    <p>Reduzir o desperdício eletrónico.</p>
+    <p>Promover a reutilização de telemóveis.</p>
+    <p>Sensibilizar para a proteção do ambiente.</p>
+  </div>
+
+  <div id="educativos" class="conteudo-objetivo">
+    <h2>Objetivos Educativos</h2>
+    <p>Reutilizar equipamentos em atividades educativas.</p>
+    <p>Incentivar a aprendizagem da programação.</p>
+    <p>Dar uma nova utilização à tecnologia.</p>
+  </div>
+</section>
  </main>
     <footer id="contacto">
       <address>

@@ -262,3 +262,50 @@ section div {
     color: #444;
     padding: 0 20px 25px;
 }
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.tabs button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: #315b35;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.tabs button:hover {
+  background: #527d45;
+  transform: scale(1.05);
+}
+
+.conteudo-data,
+.conteudo-objetivo {
+  display: none;
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.conteudo-data h2,
+.conteudo-objetivo h2 {
+  color: #315b35;
+  margin-bottom: 20px;
+}
+
+.conteudo-data p,
+.conteudo-objetivo p {
+  margin: 12px 0;
+  font-size: 17px;
+}
