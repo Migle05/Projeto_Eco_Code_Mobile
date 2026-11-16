@@ -109,9 +109,6 @@ footer a {
   cursor: pointer;
   width: 100%;
 }
-.Cookie-buttons button:hover {
-  opacity: 0.9;
-}
 
 .btnAceitar {
     background: #527d45;
@@ -119,7 +116,7 @@ footer a {
     border: 2px solid #527d45;
 }
 
-.btn-accept:hover {
+.btnAceitar:hover {
     background: #3d6334;
     border-color: #3d6334;
 }
@@ -130,7 +127,7 @@ footer a {
     border: 2px solid #527d45;
 }
 
-.btn-reject:hover {
+.btnRejeitar:hover {
     background: #edf4e9;
 }
 
