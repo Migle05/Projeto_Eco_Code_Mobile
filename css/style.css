@@ -109,6 +109,9 @@ footer a {
   cursor: pointer;
   width: 100%;
 }
+.Cookie-buttons button:hover {
+  opacity: 0.9;
+}
 
 .btnAceitar {
     background: #527d45;
