@@ -136,7 +136,6 @@ footer a {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 25px;
 }
 
 .hero h1 {
@@ -167,10 +166,9 @@ section {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  padding: 200px;
+  padding: 45px;
   justify-content: center;
   align-items: center;
-  min-height: 60vh;
 }
 
 section h1{
@@ -189,11 +187,13 @@ section div {
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 1150px;
+  height: 850px;
+  min-height: 650px;
   padding: 25px;
   overflow: hidden;
   color: white;
 }
+
 
 .hero-video {
   position: absolute;
