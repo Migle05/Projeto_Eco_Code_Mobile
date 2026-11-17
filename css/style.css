@@ -47,28 +47,36 @@ nav a:hover {
   color: #fff;
 }
 
-nav .logo {
-  font-weight: bold;
-  color: #315b35;
-}
-
 header {
   margin-top: 90px;
   flex: 1;
 }
 
 footer {
-  background: #0e160a;
-  color: #315b35;
-  text-align: center, left;
-  gap: 20px;
-  padding: 20px;
-  display: grid;
+    background: #0e160a;
+    color: #315b35;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+footer p{
+  left: 0;
 }
 
 footer a {
-  color: #315b35;
+    color: #315b35;
 }
+
+
+.footer-logo img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+}
+
 
 .cookie-content {
   position: fixed;
@@ -308,4 +316,9 @@ section div {
 .conteudo-objetivo p {
   margin: 12px 0;
   font-size: 17px;
+}
+.logo img {
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
 }
