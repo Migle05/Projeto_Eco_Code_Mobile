@@ -1,133 +1,495 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eco Code Mobile</title>
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#0e160a">
+    <meta name="description" content="Eco Code Mobile - Dá uma nova vida ao teu telemóvel antigo e contribui para um futuro mais sustentável.">
+
+    <title>Eco Code Mobile | Tecnologia Sustentável</title>
+
     <link rel="icon" type="image/png" href="/assets/favicon/faviconSemFundo.png">
-    <script src="js/script.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
-  </head>
 
-  <div id="cookie-banner" class="cookie-content">
-    <h3>A tua privacidade importa!</h3>
-    <p>Utilizamos cookies para melhorar a sua experiência no Eco Code Mobile. Deseja aceitá-los?</p>
-    <div class="cookie-buttons">
-      <button class="btnAceitar" onclick="responderCookies()">Aceitar</button>
-      <button class="btnRejeitar" onclick="responderCookies()">Recusar</button>
-    </div>
-  </div>
+    <script src="js/script.js" defer></script>
+</head>
 
-  <body>
+<body>
 
-    <nav id="navBar">
-      <div class="logo">
-        <img src="/assets/images/logoSemFundo.png" alt="Logo">
-        Eco Code Mobile 
-      </div>
-      <div>
-        <a href="#inicio">Início</a>
-        <a href="#passos">Passos</a>
-        <a href="#datas">Datas</a>
-        <a href="#objetivos">Objetivos</a>
-        <a href="#contacto">Contacto</a>
-  
+    <!-- ================= NAVBAR ================= -->
+
+    <nav id="navBar" class="navbar">
+
+        <a href="#inicio" class="logo" aria-label="Eco Code Mobile - Início">
+            <img src="/assets/images/logoSemFundo.png" alt="">
+            <span>Eco Code Mobile</span>
+        </a>
+
+        <button class="menu-toggle"
+                id="menuToggle"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+                aria-controls="navLinks">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#inicio">Início</a>
+            <a href="#passos">Passos</a>
+            <a href="#datas">Datas</a>
+            <a href="#objetivos">Objetivos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+
     </nav>
 
+
+    <!-- ================= HERO ================= -->
+
     <header class="hero" id="inicio">
-      <video class="hero-video" autoplay muted loop playsinline>
-    <source src="assets/videos/videodohero.mp4" type="video/mp4">
-    </video>
-      <div class="hero-content">
-        <h1>Eco Code Mobile</h1>
-        <p>O teu telemovél antigo pode fazer a diferença.</p>
-      </div>
-    </header>
-  <main>
-    <section id="passos">
-      <h1>Passos da Campanha</h1>
-      <div class="card">
-        <img src="/assets/images/imagem telemovel sustentavél.jpg" alt="telemovel todo bonito">
-        <h2>01</h2>
-        <p>Tens algum telemóvel Android que já não uses?</p>
-      </div>
-      <div class="card">
-         <img src="/assets/images/sustentavel.png" alt="telemovel todo bonito">
-        <h2>02</h2>
-        <p>Restaura o sistema para os dados de fábrica. Nós podemos ajudar-te.</p>
-      </div>
-      <div class="card">
-         <img src="/assets/images/caixahorrivel.jpg" alt="telemovel todo bonito">
-        <h2>03</h2>
-        <p>Coloca-o na caixa que está no PBX, junto à Secretaria.</p>
-      </div>
-    </section>
 
-    <section id="datas">
-      <h1>Datas da Campanha</h1>
+        <!-- VÍDEO DE FUNDO -->
+        <video class="hero-video"
+               autoplay
+               muted
+               loop
+               playsinline
+               aria-hidden="true">
 
-      <div class="tabs">
-        <button onclick="mostrarData('calendario')">
-          Calendário
-        </button>
+            <source src="assets/videos/videodohero.mp4" type="video/mp4">
 
-        <button onclick="mostrarData('local')">
-          Local de entrega
-        </button>
-      </div>
+        </video>
 
-      <div id="calendario" class="conteudo-data">
-        <h2>Calendário da Campanha</h2>
-        <p>Início: A confirmar</p>
-        <p>Fim: A confirmar</p>
-        <p>Horário: A confirmar</p>
-      </div>
+        <div class="hero-overlay"></div>
 
-      <div id="local" class="conteudo-data">
-        <h2>Onde entregar?</h2>
-        <p>Coloca o teu telemóvel na caixa de recolha.</p>
-        <p>Local: PBX, junto à Secretaria.</p>
-      </div>
-    </section>
+        <div class="hero-content">
 
-    <section id="objetivos">
-      <h1>Objetivos da Campanha</h1>
+            <span class="hero-tag">TECNOLOGIA COM CONSCIÊNCIA</span>
 
-      <div class="tabs">
-        <button onclick="mostrarObjetivo('ambientais')">
-          Ambientais
-        </button>
+            <h1>
+                Eco Code <span>Mobile</span>
+            </h1>
 
-        <button onclick="mostrarObjetivo('educativos')">
-          Educativos
-        </button>
-      </div>
+            <p>
+                O teu telemóvel antigo pode fazer a diferença.
+                Dá-lhe uma nova vida e ajuda a construir um futuro mais sustentável.
+            </p>
 
-      <div id="ambientais" class="conteudo-objetivo">
-        <h2>Objetivos Ambientais</h2>
-        <p>Reduzir o desperdício eletrónico.</p>
-        <p>Promover a reutilização de telemóveis.</p>
-        <p>Sensibilizar para a proteção do ambiente.</p>
-      </div>
+            <a href="#passos" class="hero-button">
+                Descobre como participar
+                <span aria-hidden="true">→</span>
+            </a>
 
-      <div id="educativos" class="conteudo-objetivo">
-        <h2>Objetivos Educativos</h2>
-        <p>Reutilizar equipamentos em atividades educativas.</p>
-        <p>Incentivar a aprendizagem da programação.</p>
-        <p>Dar uma nova utilização à tecnologia.</p>
-      </div>
-    </section>
-  </main>
-  
-    <footer id="contacto">
-      <address>
-        <a href="https://www.esjaloures.org" target="_blank">Agrupamento de Escolas José Afonso, Loures</a>
-      </address>
-      <p>&copy; 2026/2027 Eco Code Mobile</p>
-         <div class="footer-logo">
-        <img src="/assets/images/logoSemFundo.png" alt="Eco Code Mobile">
         </div>
+
+        <a href="#passos" class="scroll-indicator" aria-label="Descer para os passos">
+            <span></span>
+        </a>
+
+    </header>
+
+
+    <main>
+
+        <!-- ================= PASSOS ================= -->
+
+        <section id="passos" class="section passos-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">PARTICIPA NA MUDANÇA</span>
+
+                <h2>Passos da <span>Campanha</span></h2>
+
+                <p>
+                    Participar é simples! Segue estes três passos
+                    e ajuda-nos a dar uma nova oportunidade à tecnologia.
+                </p>
+
+            </div>
+
+
+            <div class="cards-container">
+
+                <article class="card">
+
+                    <!-- IMAGEM 1: TELEMÓVEL -->
+                    <div class="card-image">
+                        <img
+                            src="/assets/images/imagem telemovel sustentavél.jpg"
+                            alt="Telemóvel que pode ganhar uma nova utilização"
+                            loading="lazy">
+                        <span class="card-number">01</span>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="card-label">PRIMEIRO PASSO</span>
+
+                        <h3>Tens um telemóvel antigo?</h3>
+
+                        <p>
+                            Tens algum telemóvel Android que já não uses?
+                            Ele ainda pode ter muito para oferecer!
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <!-- IMAGEM 2: REUTILIZAÇÃO -->
+                    <div class="card-image">
+                        <img
+                            src="/assets/images/sustentavel.png"
+                            alt="Tecnologia associada à sustentabilidade"
+                            loading="lazy">
+                        <span class="card-number">02</span>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="card-label">SEGUNDO PASSO</span>
+
+                        <h3>Prepara o equipamento</h3>
+
+                        <p>
+                            Restaura o sistema para os dados de fábrica.
+                            Nós podemos ajudar-te nesse processo.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <!-- IMAGEM 3: CAIXA DE RECOLHA -->
+                    <div class="card-image">
+                        <img
+                            src="/assets/images/caixahorrivel.jpg"
+                            alt="Caixa de recolha para os telemóveis"
+                            loading="lazy">
+                        <span class="card-number">03</span>
+                    </div>
+
+                    <div class="card-content">
+
+                        <span class="card-label">TERCEIRO PASSO</span>
+
+                        <h3>Entrega o teu telemóvel</h3>
+
+                        <p>
+                            Coloca-o na caixa de recolha que está no PBX,
+                            junto à Secretaria.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DATAS ================= -->
+
+        <section id="datas" class="section datas-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">INFORMAÇÕES IMPORTANTES</span>
+
+                <h2>Datas da <span>Campanha</span></h2>
+
+                <p>
+                    Consulta o calendário e descobre onde podes
+                    entregar o teu equipamento.
+                </p>
+
+            </div>
+
+
+            <div class="tabs-container">
+
+                <div class="tabs" role="tablist" aria-label="Informações da campanha">
+
+                    <button class="tab-button active"
+                            id="tab-calendario"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="calendario"
+                            data-tab="calendario">
+
+                        Calendário
+
+                    </button>
+
+                    <button class="tab-button"
+                            id="tab-local"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="local"
+                            data-tab="local">
+
+                        Local de entrega
+
+                    </button>
+
+                </div>
+
+
+                <div id="calendario"
+                     class="tab-content active"
+                     role="tabpanel"
+                     aria-labelledby="tab-calendario">
+
+                    <div class="tab-icon">📅</div>
+
+                    <h3>Calendário da Campanha</h3>
+
+                    <div class="info-row">
+                        <span>Início</span>
+                        <strong>A confirmar</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Fim</span>
+                        <strong>A confirmar</strong>
+                    </div>
+
+                    <div class="info-row">
+                        <span>Horário</span>
+                        <strong>A confirmar</strong>
+                    </div>
+
+                </div>
+
+
+                <div id="local"
+                     class="tab-content"
+                     role="tabpanel"
+                     aria-labelledby="tab-local"
+                     hidden>
+
+                    <div class="tab-icon">📍</div>
+
+                    <h3>Onde entregar?</h3>
+
+                    <p>
+                        Coloca o teu telemóvel na caixa de recolha
+                        disponibilizada pela campanha.
+                    </p>
+
+                    <div class="location-highlight">
+                        <strong>Local de entrega</strong>
+                        <span>PBX, junto à Secretaria.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= OBJETIVOS ================= -->
+
+        <section id="objetivos" class="section objetivos-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">O NOSSO PROPÓSITO</span>
+
+                <h2>Objetivos da <span>Campanha</span></h2>
+
+                <p>
+                    A tecnologia também pode contribuir para um planeta melhor.
+                    Descobre aquilo que queremos alcançar.
+                </p>
+
+            </div>
+
+
+            <div class="tabs-container">
+
+                <div class="tabs" role="tablist" aria-label="Objetivos da campanha">
+
+                    <button class="tab-button active"
+                            id="tab-ambientais"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="ambientais"
+                            data-tab="ambientais">
+
+                        🌱 Ambientais
+
+                    </button>
+
+                    <button class="tab-button"
+                            id="tab-educativos"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="educativos"
+                            data-tab="educativos">
+
+                        💡 Educativos
+
+                    </button>
+
+                </div>
+
+
+                <div id="ambientais"
+                     class="tab-content active"
+                     role="tabpanel"
+                     aria-labelledby="tab-ambientais">
+
+                    <div class="tab-icon">🌍</div>
+
+                    <h3>Objetivos Ambientais</h3>
+
+                    <ul class="objective-list">
+                        <li>Reduzir o desperdício eletrónico.</li>
+                        <li>Promover a reutilização de telemóveis.</li>
+                        <li>Sensibilizar para a proteção do ambiente.</li>
+                    </ul>
+
+                </div>
+
+
+                <div id="educativos"
+                     class="tab-content"
+                     role="tabpanel"
+                     aria-labelledby="tab-educativos"
+                     hidden>
+
+                    <div class="tab-icon">💻</div>
+
+                    <h3>Objetivos Educativos</h3>
+
+                    <ul class="objective-list">
+                        <li>Reutilizar equipamentos em atividades educativas.</li>
+                        <li>Incentivar a aprendizagem da programação.</li>
+                        <li>Dar uma nova utilização à tecnologia.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MENSAGEM FINAL ================= -->
+
+        <section class="final-section">
+
+            <div class="final-content">
+
+                <span class="section-tag">PEQUENOS GESTOS, GRANDES MUDANÇAS</span>
+
+                <h2>
+                    A mudança começa <span>contigo.</span>
+                </h2>
+
+                <p>
+                    Não deixes o teu antigo telemóvel esquecido numa gaveta.
+                    Dá-lhe uma nova oportunidade!
+                </p>
+
+                <a href="#passos" class="hero-button">
+                    Participa na campanha
+                    <span aria-hidden="true">→</span>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer id="contacto" class="footer">
+
+        <address class="footer-school">
+
+            <a href="https://www.esjaloures.org"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                Agrupamento de Escolas José Afonso, Loures
+
+            </a>
+
+        </address>
+
+
+        <div class="footer-copy">
+
+            <p>&copy; 2026/2027 Eco Code Mobile</p>
+
+        </div>
+
+
+        <a href="#inicio"
+           class="footer-logo"
+           aria-label="Voltar ao início">
+
+            <img src="/assets/images/logoSemFundo.png"
+                 alt="Eco Code Mobile">
+
+        </a>
+
     </footer>
 
-  </body>
+
+    <!-- ================= PRIVACIDADE ================= -->
+
+    <div id="cookie-banner"
+         class="cookie-content"
+         role="dialog"
+         aria-labelledby="cookie-title"
+         aria-describedby="cookie-description"
+         hidden>
+
+        <div class="cookie-icon">🌿</div>
+
+        <div class="cookie-text">
+
+            <h2 id="cookie-title">A tua privacidade importa!</h2>
+
+            <p id="cookie-description">
+                Podemos guardar a tua preferência para não voltar
+                a mostrar esta mensagem.
+            </p>
+
+        </div>
+
+        <div class="cookie-buttons">
+
+            <button class="btnAceitar" id="acceptCookies">
+                Aceitar
+            </button>
+
+            <button class="btnRejeitar" id="rejectCookies">
+                Recusar
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
 </html>
