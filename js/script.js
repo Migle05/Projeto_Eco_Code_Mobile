@@ -1,332 +1,152 @@
 
 const navBar = document.getElementById("navBar");
-
 const menuToggle = document.getElementById("menuToggle");
-
 const navLinks = document.getElementById("navLinks");
 
-
-
 function atualizarNavbar() {
-
-    if (window.scrollY > 40) {
-        navBar.classList.add("scrolled");
-    } else {
-        navBar.classList.remove("scrolled");
-    }
-
+    navBar.classList.toggle("scrolled", window.scrollY > 40);
 }
-
-window.addEventListener("scroll", atualizarNavbar, {
-    passive: true
-});
-
-atualizarNavbar();
-
-
 
 function fecharMenu() {
-
     navLinks.classList.remove("open");
-
     menuToggle.classList.remove("active");
-
     menuToggle.setAttribute("aria-expanded", "false");
-
     menuToggle.setAttribute("aria-label", "Abrir menu");
-
 }
 
+window.addEventListener("scroll", atualizarNavbar, { passive: true });
+atualizarNavbar();
 
 menuToggle.addEventListener("click", () => {
+    const aberto = navLinks.classList.toggle("open");
 
-    const menuAberto = navLinks.classList.toggle("open");
-
-    menuToggle.classList.toggle("active", menuAberto);
-
-    menuToggle.setAttribute("aria-expanded", String(menuAberto));
-
-    menuToggle.setAttribute(
-        "aria-label",
-        menuAberto ? "Fechar menu" : "Abrir menu"
-    );
-
+    menuToggle.classList.toggle("active", aberto);
+    menuToggle.setAttribute("aria-expanded", aberto);
+    menuToggle.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
 });
-
 
 navLinks.querySelectorAll("a").forEach(link => {
-
     link.addEventListener("click", fecharMenu);
-
 });
 
-
-
-document.addEventListener("click", (event) => {
-
-    const clicouDentro =
-        navLinks.contains(event.target) ||
-        menuToggle.contains(event.target);
-
-    if (!clicouDentro) {
+document.addEventListener("click", event => {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
         fecharMenu();
     }
-
 });
 
-
-
-document.addEventListener("keydown", (event) => {
-
-    if (event.key === "Escape") {
-        fecharMenu();
-    }
-
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") fecharMenu();
 });
-
-
 
 window.addEventListener("resize", () => {
-
-    if (window.innerWidth > 700) {
-        fecharMenu();
-    }
-
+    if (window.innerWidth > 700) fecharMenu();
 });
 
+// Separadores
 
-function configurarSeparadores() {
+document.querySelectorAll(".tabs-container").forEach(grupo => {
+    const botoes = grupo.querySelectorAll(".tab-button");
+    const conteudos = grupo.querySelectorAll(".tab-content");
 
-    const grupos = document.querySelectorAll(".tabs-container");
+    function selecionarTab(botao) {
+        const id = botao.dataset.tab;
+        const selecionado = grupo.querySelector(`#${id}`);
 
-    grupos.forEach(grupo => {
+        if (!selecionado) return;
 
-        const botoes = grupo.querySelectorAll(".tab-button");
+        botoes.forEach(outro => {
+            const ativo = outro === botao;
 
-        const conteudos = grupo.querySelectorAll(".tab-content");
-
-
-        botoes.forEach(botao => {
-
-            botao.addEventListener("click", () => {
-
-                const id = botao.dataset.tab;
-
-                const conteudoSelecionado =
-                    grupo.querySelector(`#${id}`);
-
-
-                if (!conteudoSelecionado) {
-                    return;
-                }
-
-
-
-                botoes.forEach(outroBotao => {
-
-                    outroBotao.classList.remove("active");
-
-                    outroBotao.setAttribute("aria-selected", "false");
-
-                    outroBotao.setAttribute("tabindex", "-1");
-
-                });
-
-
-
-                conteudos.forEach(conteudo => {
-
-                    conteudo.classList.remove("active");
-
-                    conteudo.hidden = true;
-
-                });
-
-
-
-                botao.classList.add("active");
-
-                botao.setAttribute("aria-selected", "true");
-
-                botao.setAttribute("tabindex", "0");
-
-
-
-                conteudoSelecionado.hidden = false;
-
-                conteudoSelecionado.classList.add("active");
-
-            });
-
-
-
-            botao.addEventListener("keydown", (event) => {
-
-                if (
-                    event.key === "ArrowRight" ||
-                    event.key === "ArrowLeft"
-                ) {
-
-                    event.preventDefault();
-
-                    const listaBotoes = Array.from(botoes);
-
-                    const indiceAtual = listaBotoes.indexOf(botao);
-
-                    const direcao =
-                        event.key === "ArrowRight" ? 1 : -1;
-
-                    const proximoIndice =
-                        (indiceAtual + direcao + listaBotoes.length)
-                        % listaBotoes.length;
-
-                    const proximoBotao = listaBotoes[proximoIndice];
-
-                    proximoBotao.focus();
-
-                    proximoBotao.click();
-
-                }
-
-            });
-
+            outro.classList.toggle("active", ativo);
+            outro.setAttribute("aria-selected", ativo);
+            outro.setAttribute("tabindex", ativo ? "0" : "-1");
         });
 
+        conteudos.forEach(conteudo => {
+            const ativo = conteudo === selecionado;
 
-
-        botoes.forEach((botao, indice) => {
-
-            const selecionado = indice === 0;
-
-            botao.classList.toggle("active", selecionado);
-
-            botao.setAttribute(
-                "aria-selected",
-                String(selecionado)
-            );
-
-            botao.setAttribute(
-                "tabindex",
-                selecionado ? "0" : "-1"
-            );
-
+            conteudo.classList.toggle("active", ativo);
+            conteudo.hidden = !ativo;
         });
+    }
 
+    botoes.forEach(botao => {
+        botao.addEventListener("click", () => selecionarTab(botao));
 
-        conteudos.forEach((conteudo, indice) => {
+        botao.addEventListener("keydown", event => {
+            if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
 
-            const selecionado = indice === 0;
+            event.preventDefault();
 
-            conteudo.hidden = !selecionado;
+            const lista = Array.from(botoes);
+            const atual = lista.indexOf(botao);
+            const direcao = event.key === "ArrowRight" ? 1 : -1;
+            const proximo = lista[(atual + direcao + lista.length) % lista.length];
 
-            conteudo.classList.toggle("active", selecionado);
-
+            proximo.focus();
+            selecionarTab(proximo);
         });
-
     });
 
-}
+    selecionarTab(botoes[0]);
+});
 
-configurarSeparadores();
+// Perguntas frequentes
 
+const perguntasFAQ = document.querySelectorAll(".faq-question");
+
+perguntasFAQ.forEach(pergunta => {
+    pergunta.addEventListener("click", () => {
+        const resposta = document.getElementById(pergunta.getAttribute("aria-controls"));
+        const item = pergunta.closest(".faq-item");
+        const aberta = pergunta.getAttribute("aria-expanded") === "true";
+
+        perguntasFAQ.forEach(outra => {
+            const outraResposta = document.getElementById(outra.getAttribute("aria-controls"));
+            const outroItem = outra.closest(".faq-item");
+
+            outra.setAttribute("aria-expanded", "false");
+            outraResposta.hidden = true;
+            outroItem.classList.remove("active");
+        });
+
+        if (!aberta) {
+            pergunta.setAttribute("aria-expanded", "true");
+            resposta.hidden = false;
+            item.classList.add("active");
+        }
+    });
+});
+
+// Preferências de privacidade
 
 const cookieBanner = document.getElementById("cookie-banner");
-
-const acceptCookies = document.getElementById("acceptCookies");
-
-const rejectCookies = document.getElementById("rejectCookies");
-
 const STORAGE_KEY = "ecoCodeMobilePrivacyChoice";
 
-
-function obterPreferencia() {
-
-    try {
-
-        return localStorage.getItem(STORAGE_KEY);
-
-    } catch (erro) {
-
-        console.warn(
-            "Não foi possível consultar as preferências.",
-            erro
-        );
-
-        return null;
-
-    }
-
-}
-
-
-
 function guardarPreferencia(escolha) {
-
     try {
-
         localStorage.setItem(STORAGE_KEY, escolha);
-
-        return true;
-
     } catch (erro) {
-
-        console.warn(
-            "Não foi possível guardar a preferência.",
-            erro
-        );
-
-        return false;
-
+        console.warn("Não foi possível guardar a preferência.", erro);
     }
 
+    cookieBanner.hidden = true;
 }
 
-
-
-function iniciarPrivacidade() {
-
-    const preferencia = obterPreferencia();
-
-    if (preferencia === "aceite" || preferencia === "recusada") {
-
-        cookieBanner.hidden = true;
-
-    } else {
-
-        cookieBanner.hidden = false;
-
-    }
-
+try {
+    const preferencia = localStorage.getItem(STORAGE_KEY);
+    cookieBanner.hidden = preferencia === "aceite" || preferencia === "recusada";
+} catch (erro) {
+    cookieBanner.hidden = false;
 }
 
-
-
-acceptCookies.addEventListener("click", () => {
-
+document.getElementById("acceptCookies").addEventListener("click", () => {
     guardarPreferencia("aceite");
-
-    cookieBanner.hidden = true;
-
 });
 
-
-
-rejectCookies.addEventListener("click", () => {
-
+document.getElementById("rejectCookies").addEventListener("click", () => {
     guardarPreferencia("recusada");
-
-    cookieBanner.hidden = true;
-
 });
 
-
-
-iniciarPrivacidade();
-
-
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    console.log("Eco Code Mobile iniciado com sucesso! 🌱");
-
-});
+console.log("Eco Code Mobile iniciado com sucesso! 🌱");
